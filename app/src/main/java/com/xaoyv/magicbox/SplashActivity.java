@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
+
+//    static {
+//        System.loadLibrary("testnamespace");
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
