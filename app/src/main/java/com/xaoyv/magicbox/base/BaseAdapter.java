@@ -8,26 +8,40 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public abstract class BaseAdapter<D> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<D> data;
+public abstract class BaseAdapter<D> extends RecyclerView.Adapter<BaseViewHolder> {
+    private List<D> data;
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(getItemId(), parent, false);
-        return new RecyclerView.ViewHolder(inflate) {
-        };
+    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(getItemLayoutId(), parent, false);
+        return new BaseViewHolder(inflate);
     }
 
-    protected ArrayList<D> getData() {
+    protected List<D> getData() {
         return data;
     }
 
-    protected abstract int getItemId();
+    protected abstract int getItemLayoutId();
 
     @Override
     public int getItemCount() {
         return data == null ? 0 : data.size();
+    }
+
+    public void setData(List<D> data) {
+        this.data = data;
+        notifyDataSetChanged();
+    }
+
+    public void addData(List<D> data) {
+        if (this.data == null) {
+            this.data = data;
+        } else {
+            this.data.addAll(data);
+        }
+        notifyDataSetChanged();
     }
 }

@@ -19,16 +19,6 @@ android {
         }
     }
 
-
-//    signingConfigs {
-//        release {
-//            keyAlias 'kt'
-//            keyPassword 'H*XjqsFPb7rNT*2k'
-//            storeFile file('./kt.jks')
-//            storePassword 'h!$82!7O4XaB^e%X'
-//        }
-//    }
-
     externalNativeBuild {
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
@@ -36,10 +26,20 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'box'
+            keyPassword 'Xaoyv000'
+            storeFile file('./keystore/MagicBox.jks')
+            storePassword 'Xaoyv000'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -67,4 +67,6 @@ dependencies {
     implementation fileTree("libs/AndroidAutoSize-v1.2.1.aar")
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'
+    //glide
+    implementation "com.github.bumptech.glide:glide:4.11.0"
 }

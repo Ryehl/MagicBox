@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">工具箱</string>
+
+    <string name="privacy_title">隐私政策提示</string>
+    <string name="privacy_thank">感谢您信任并使用本应用，为了更好的保护您的隐私和个人信息安全，根据国家相关法律规定和标准更新了</string>
+    <string name="privacy_privacy">《隐私政策》</string>
+    <string name="privacy_and">和</string>
+    <string name="privacy_user">《用户协议》</string>
+    <string name="privacy_end">，请您在使用前仔细阅读并了解。</string>
+
+    <string name="i_agree">我同意</string>
+    <string name="agree">同意</string>
+    <string name="not_agree">不同意</string>
+
+    <string name="title_photolist">图片列表</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.xaoyv.magicbox.view;
+package com.xaoyv.magicbox.view.webview;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

@@ -47,6 +47,12 @@ public class SharedPreferencesUtils {
         return sp.getFloat(key, defaultValue);
     }
 
+    public static long getLong(@Nullable Context context, String key, long defaultValue) {
+        if (context == null) return defaultValue;
+        SharedPreferences sp = context.getSharedPreferences(NAME, Context.MODE_PRIVATE);
+        return sp.getLong(key, defaultValue);
+    }
+
     public static String getString(@Nullable Context context, String key, String defaultValue) {
         if (context == null) return defaultValue;
         SharedPreferences sp = context.getSharedPreferences(NAME, Context.MODE_PRIVATE);

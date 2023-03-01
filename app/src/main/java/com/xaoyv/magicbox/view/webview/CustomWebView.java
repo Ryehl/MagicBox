@@ -1,4 +1,4 @@
-package com.xaoyv.magicbox.view;
+package com.xaoyv.magicbox.view.webview;
 
 import android.content.Context;
 import android.util.AttributeSet;
